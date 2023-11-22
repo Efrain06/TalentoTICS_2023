@@ -184,3 +184,5 @@ temps_2021 = np.array(df_clima["temp_prom_2021"])
 temps_2022 = np.array(df_clima["temp_prom_2022"])
 cambio_porc = ((temps_2022 - temps_2021)/temps_2021)*100
 print(f"Diferencias porcentuales meses:{cambio_porc}")
+
+
