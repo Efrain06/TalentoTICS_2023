@@ -19,7 +19,6 @@ df_Meteo_land = pd.read_csv('Ejercicios/Meteorite_Landings.csv')
 df_Meteo_land.info()
 
 # Se identifico una columna donde todos los valores son nulos, descartar columna:
-
 df_Meteo_land.drop("year", inplace=True,axis=1)
 df_Meteo_land.info()
 
