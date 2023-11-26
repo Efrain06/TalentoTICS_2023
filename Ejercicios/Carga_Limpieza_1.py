@@ -44,7 +44,7 @@ df_Cvd_cl1.info()
 df_Covid_Clin1.dropna(inplace=True)
 df_Covid_Clin1.info()
 
-#mSe identifican las filas están duplicadas:
+# Se identifican las filas están duplicadas:
 print(df_Covid_Clin1.duplicated())
 
 #validando el rango o encontrando datos atípicos
