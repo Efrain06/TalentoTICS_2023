@@ -13,3 +13,5 @@ df_BCdata_temp = pd.read_csv('Ejercicios/sampleDatasets/BaltimoreCrimeData.csv',
 
 #adecuación del dataset para manejo de datos temporales:
 print(f"dataset sin limpiar:{df_BCdata_temp.info()}")
+
+df["Period"] = df[["Courses", "Duration"]].apply(lambda x: "-".join(x), axis =1)
