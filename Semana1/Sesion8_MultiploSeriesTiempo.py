@@ -119,6 +119,7 @@ df2 = pd.read_csv("Datasets/Parte2.csv")
 # merging y concatenación de varios datasets:
 
 #concatenación de dos dataframes de forma vertical
+#exige el mismo numero de columnas (?)
 df_r1 = pd.concat([df1,df2], axis=0)
 print(df_r1.info())
 
