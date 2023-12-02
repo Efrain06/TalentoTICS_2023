@@ -1,0 +1,42 @@
+# Prueba de chi-cuadrado : prueba que determina la dependencia entre dos variales
+# categoricas en una muesra de datos. Se realiza dobre una tabla de contingencia,
+# analisando las frecuencias de las variables.
+
+
+# Tabla de contingencia: Resume la frecuencias de unas variables categoricas
+
+import pandas as pd
+from scipy.stats import chi2_contingency
+
+
+df_Saber11 =  pd.read_csv('Ejercicios/sampleDatasets/Saber_11__2019-2.csv')
+print(df_Saber11)
+
+# Eliminar valores nulos
+df_Sb11 = df_Saber11.dropna()
+df_Sb11.info()
+
+#eliminar filas duplicadas del dataframe:
+df_Sb11.drop_duplicates(inplace=True)
+
+
+tb_cont = pd.crosstab(df_Sb11["ESTU_MCPIO_RESIDE"], df_Sb11["FAMI_SITUACIONECONOMICA"])
+tb_cont_tl = pd.crosstab(df_Sb11["ESTU_MCPIO_RESIDE"], df_Sb11["FAMI_SITUACIONECONOMICA"], margins=True, margins_name="Total")
+
+print(tb_cont)
+print(tb_cont_tl)
+
+
+# Prueba de chi-cuadrado sobre la tabla de contingencia (Frecuencia de datos categoricos)
+
+chi2, p,a,b = chi2_contingency(tb_cont)
+print(f"Parametro de chi 2:{chi2}")
+print(f"Parametro de p:{p}")
+
+alpha = 0.005 # Nivel de significancia de la prueba
+
+if p < alpha:
+    print("Se rechaza la hipotesis nula, es decir, Si hay dependencia entre los datos")
+else:
+    print("Se acepta la hipotesis nula, es decir, No hay dependencia entre los datos")
+

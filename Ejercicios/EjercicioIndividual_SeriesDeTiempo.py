@@ -2,7 +2,6 @@
 # Pyton 2
 
 # Relacionando dos datasets
-# Concatenacion y merge de dataset
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -14,8 +13,10 @@ print(df_data2)
 
 # El merge, mezcla dos dataset, dataframe a partir de una columna comun;
 # No importa que tengan distinto # de filas
-df_all_data = pd.merge(df_data1, df_data2, on = "TIEMPO")
+df_all_data = pd.merge(df_data1, df_data2, on="TIEMPO", how="inner", copy=False )
+print(df_all_data.head(10))
+print(df_all_data.tail())
+print(df_all_data.info())
 
-df_group = df_all_data.groupby("TIEMPO")["EST. LACIUDADELA PM10"].mean().plot(kind="bar")
-plt.show()
-print(df_all_data)
+#mostrar qué filas están duplicadas:
+print(df_all_data.duplicated())
