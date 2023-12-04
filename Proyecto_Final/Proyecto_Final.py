@@ -1,12 +1,16 @@
 import tkinter as tk
+from viewer.gui_app import Frame, barra_menu
 
-ventana = tk.Tk()
-ventana.geometry("800x700")
+def main():
+    root = tk.Tk()
+    root.title('Analisis de Datos')
+    root.iconbitmap('Proyecto_Final\ico1.ico')
+    root.resizable(0,0)
+    barra_menu(root)
 
-#Menu principal
-def barra_menu(root)
-    barra_menu = tk.Menu(root)
-    root.config(manu=barra_menu, )
+    app = Frame(root= root)
 
+    app.mainloop()
 
-ventana.mainloop()
+if __name__ == '__main__':
+    main()
