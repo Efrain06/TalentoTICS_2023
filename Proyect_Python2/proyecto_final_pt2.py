@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 # 1. CARGA DE DATOS -> 
 
 # Se carga el dataframe desde el archivo plano "Perfil de morbilidad Julio"
-df_dat_PM1 = pd.read_csv('Proyect_data\Dataset\Perfil_de_morbilidad_Julio.csv')
+df_dat_PM1 = pd.read_csv('Proyect_Python2\Dataset\Perfil_de_morbilidad_Julio.csv')
 df_dat_PM1.info()
 
 # Se carga el dataframe desde el archivo plano "Perfil de morbilidad Agosto"
-df_dat_PM2 = pd.read_csv('Proyect_data\Dataset\Perfil_de_morbilidad_Agosto.csv')
+df_dat_PM2 = pd.read_csv('Proyect_Python2\Dataset\Perfil_de_morbilidad_Agosto.csv')
 df_dat_PM2.info()
 
 # Se eliminan los valores nulos Dataset 1 y 2:
@@ -39,7 +39,7 @@ df_Dat_Tmp["EDAD DE ATENCION"] = pd.to_numeric(df_Dat_Tmp["EDAD DE ATENCION"],er
 
 print(f"dataset limpio:{df_Dat_Tmp.info()}")
 print(".....................................................................")
-print(df_dat_PM2.head(50))
+print(df_dat_PM2.head(10))
 print(".....................................................................")
 print(f"La edad maxima de atencion es: ", df_Dat_Tmp["EDAD DE ATENCION"].max())
 print(".....................................................................")
